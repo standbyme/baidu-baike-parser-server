@@ -33,7 +33,7 @@ curl -l -H "Content-type: application/json" -X POST -d '{"url":"https://baike.ba
     "title":string,
 }
 ```
-**Any Field Can Be Not Found Including Title(Yes,there is some pages do not have page)(Very rare)**
+**Any Field Can Be Not Found (Including Title(Yes,there is some pages do not have title)(Very rare))**
 *For example, there is no desc*
 ```
 {
