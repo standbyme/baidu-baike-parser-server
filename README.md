@@ -1,14 +1,12 @@
 Baidu Baike Parser Server
-
-# 1
-`docker login --username=thegatheringstorm registry.cn-beijing.aliyuncs.com`
-
-password: 1234abcd
-# 2
-`docker run -d --name baidu-baike-parser-server -p 1234:1234 registry.cn-beijing.aliyuncs.com/standbyme/baidu-baike-parser-server`
-
-# 3
-`curl -l -H "Content-type: application/json" -X POST -d '{"url":"https://baike.baidu.com/item/%E5%8D%8E%E6%98%A5%E8%8E%B9/1247543?fr=aladdin"}' http://127.0.0.1:1234/`
+# Setup Environment
+password: `1234abcd`
+- `docker login --username=thegatheringstorm registry.cn-beijing.aliyuncs.com`
+- `docker run -d --name baidu-baike-parser-server -p 1234:1234 registry.cn-beijing.aliyuncs.com/standbyme/baidu-baike-parser-server`
+# Test
+```
+curl -l -H "Content-type: application/json" -X POST -d '{"url":"https://baike.baidu.com/item/%E5%8D%8E%E6%98%A5%E8%8E%B9/1247543?fr=aladdin"}' http://127.0.0.1:1234/
+```
 
 # Para
 ```
@@ -35,7 +33,7 @@ password: 1234abcd
     "title":string,
 }
 ```
-**Any Field Can Be Not Found Including Title(Yes,there is some page does not have page)(Very rare)**
+**Any Field Can Be Not Found Including Title(Yes,there is some pages do not have page)(Very rare)**
 *For example, there is no desc*
 ```
 {
