@@ -1,9 +1,5 @@
 Baidu Baike Parser Server
 
-**Please Use https://baike.baidu.com/item/%E8%91%A3%E6%98%8E%E7%8F%A0/1133**
-**Not https://baike.baidu.com/item/董明珠/1133**
-**Chinese or others Must be URLEncoded**
-
 # 1
 `docker login --username=thegatheringstorm registry.cn-beijing.aliyuncs.com`
 
@@ -13,6 +9,19 @@ password: 1234abcd
 
 # 3
 `curl -l -H "Content-type: application/json" -X POST -d '{"url":"https://baike.baidu.com/item/%E5%8D%8E%E6%98%A5%E8%8E%B9/1247543?fr=aladdin"}' http://127.0.0.1:1234/`
+
+# Para
+```
+{
+    "url":string
+}
+```
+
+**Please Use https://baike.baidu.com/item/%E8%91%A3%E6%98%8E%E7%8F%A0/1133**
+
+**Not https://baike.baidu.com/item/董明珠/1133**
+
+**Chinese or others Must be URLEncoded**
 
 # Return Value
 ```
@@ -26,7 +35,7 @@ password: 1234abcd
     "title":string,
 }
 ```
-**Any Field Can Be Not Found**
+**Any Field Can Be Not Found Including Title(Yes,there is some page does not have page)(Very rare)**
 *For example, there is no desc*
 ```
 {
